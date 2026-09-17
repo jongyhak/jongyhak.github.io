@@ -1,2 +1,605 @@
 <head>
 <meta name="naver-site-verification" content="2f3d4e3419c0b5c07b5e96e22a4787c8aa2e3bb8" />  
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>만 나이 계산기 | 만 나이·연 나이·세는 나이 한번에 확인</title>
+<meta name="description" content="생년월일만 입력하면 만 나이, 연 나이, 세는 나이, 띠, 다음 생일까지 남은 날을 바로 확인할 수 있는 계산기입니다.">
+<meta name="google-site-verification" content="xYLR0tC5YbR2W6DV6FLD6ZvMiumXvfkYebZ_dD8HhAw" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4970826371996884"
+     crossorigin="anonymous"></script>
+<!-- Pretendard 웹폰트 -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+<!-- ============================================================
+  Google AdSense: 사이트 인증용 메타 태그
+  애드센스 승인 신청 시 발급받는 코드로 아래 content 값을 교체하세요.
+  예) <meta name="google-adsense-account" content="ca-pub-1234567890123456">
+============================================================= -->
+<!-- <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX"> -->
+
+<!-- ============================================================
+  Google AdSense: 광고 스크립트 (승인 후 활성화)
+  본인의 client 값(ca-pub-XXXXXXXXXXXXXXXX)으로 교체한 뒤 주석을 해제하세요.
+============================================================= -->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+  :root{
+    --paper: #FFFFFF;
+    --paper-line: #E5E5E5;
+    --ink: #1C2333;
+    --ink-soft: #5B6478;
+    --seal: #A63A2E;
+    --seal-soft: #C97B6E;
+    --gold: #8C7A4E;
+    --blue: #0056b3;
+    --card-bg: #FFFFFF;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .site {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+  }
+
+  /* ---------- Ad slot: top banner ---------- */
+  .ad-slot {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 10px 16px 0;
+  }
+  .ad-slot .ad-box {
+    border: 1px dashed var(--paper-line);
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 0.02em;
+  }
+  /*
+    실제 광고 삽입 위치 (승인 후):
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  */
+
+  header {
+    text-align: center;
+    padding: 28px 0 20px;
+  }
+
+  .kicker {
+    font-size: 13px;
+    color: var(--seal);
+    letter-spacing: 0.04em;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Pretendard", Georgia, serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.35;
+    margin: 0 0 10px;
+  }
+
+  header p.lede {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Certificate card ---------- */
+  .certificate {
+    background: var(--card-bg);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 24px 22px 20px;
+    position: relative;
+  }
+
+  .cert-topline, .cert-bottomline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    margin-bottom: 18px;
+  }
+  .cert-bottomline { margin-top: 18px; margin-bottom: 0; }
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--paper-line);
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .field-row label {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .field-row input[type="date"] {
+    flex: 1;
+    min-width: 180px;
+    font-size: 16px;
+    padding: 10px 12px;
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: inherit;
+  }
+
+  .field-row input[type="date"]:focus {
+    outline: 2px solid var(--seal);
+    outline-offset: 1px;
+  }
+
+  /* ---------- Result hero ---------- */
+  .result {
+    display: none;
+  }
+  .result.show { display: block; }
+
+  .hero {
+    text-align: center;
+    padding: 4px 0 18px;
+    position: relative;
+  }
+
+  .seal-mark {
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--seal);
+    border-radius: 50%;
+    color: var(--seal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Pretendard", serif;
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(-8deg);
+    opacity: 0.85;
+  }
+
+  .hero-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+
+  .hero-number {
+    font-family: "Pretendard", Georgia, serif;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--blue);
+  }
+
+  .hero-number .unit {
+    font-size: 28px;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+
+  .hero-sub {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .detail-table tr {
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .detail-table tr:last-child { border-bottom: none; }
+
+  .detail-table td {
+    padding: 14px 4px;
+    font-size: 15px;
+  }
+
+  .detail-table td.label {
+    color: var(--ink-soft);
+    width: 42%;
+  }
+
+  .detail-table td.value {
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .detail-table td.value .note {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  .dday {
+    color: var(--seal);
+  }
+
+  .placeholder-hint {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    padding: 30px 0;
+  }
+
+  /* ---------- Ad slot: in-content ---------- */
+  .ad-slot-mid {
+    margin: 20px 0;
+  }
+  .ad-slot-mid .ad-box {
+    border: 1px dashed var(--paper-line);
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+  }
+  /*
+    실제 광고 삽입 위치 (승인 후):
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  */
+
+  /* ---------- Explainer ---------- */
+  .explainer {
+    margin-top: 26px;
+  }
+
+  .explainer h2 {
+    font-family: "Pretendard", Georgia, serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+
+  .explainer p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+
+  .explainer p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--paper-line);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Copy link button ---------- */
+  .copy-link-row {
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  .copy-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 22px;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .copy-link-btn:hover {
+    background: #00449c;
+  }
+
+  .copy-link-btn:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 24px; }
+    .certificate { padding: 18px 14px 16px; }
+    .hero-number { font-size: 52px; }
+    .seal-mark { width: 52px; height: 52px; font-size: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 상단 배너 광고 위치 -->
+<div class="ad-slot">
+  <div class="ad-box">광고 영역 (상단 배너) &mdash; AdSense 승인 후 이 자리에 게재됩니다</div>
+</div>
+
+<div class="site">
+
+  <header>
+    <p class="kicker">2023년 6월 시행 · 만 나이 통일법 기준</p>
+    <h1>만 나이, 오늘은<br>몇 살인가요</h1>
+    <p class="lede">생년월일을 입력하면 법적 기준인 만 나이와 함께 연 나이, 세는 나이, 띠, 다음 생일까지 남은 날을 확인할 수 있습니다.</p>
+  </header>
+
+  <div class="certificate">
+    <div class="cert-topline">
+      <span>AGE CALCULATOR</span>
+      <span id="todayLabel"></span>
+    </div>
+
+    <div class="field-row">
+      <label for="birthInput">생년월일</label>
+      <input type="date" id="birthInput" min="1900-01-01">
+    </div>
+
+    <div id="placeholderHint" class="placeholder-hint">생년월일을 입력하면 결과가 표시됩니다</div>
+
+    <div id="result" class="result">
+      <div class="hero">
+        <div class="seal-mark">만 나이</div>
+        <div class="hero-label">현재 법적 나이</div>
+        <div class="hero-number"><span id="manAge">-</span><span class="unit">세</span></div>
+        <div class="hero-sub" id="birthdayPassed"></div>
+      </div>
+
+      <table class="detail-table">
+        <tr>
+          <td class="label">연 나이</td>
+          <td class="value"><span id="yearAge">-</span>세<span class="note">병역법 등 일부 법령에서 사용 · 올해 연도 &minus; 출생 연도</span></td>
+        </tr>
+        <tr>
+          <td class="label">세는 나이</td>
+          <td class="value"><span id="countAge">-</span>세<span class="note">일상적으로 쓰던 전통 나이 · 현재는 공식 기준 아님</span></td>
+        </tr>
+        <tr>
+          <td class="label">띠</td>
+          <td class="value"><span id="zodiacEmoji"></span> <span id="zodiac">-</span></td>
+        </tr>
+        <tr>
+          <td class="label">다음 생일까지</td>
+          <td class="value dday"><span id="dday">-</span></td>
+        </tr>
+      </table>
+
+      <div class="copy-link-row">
+        <button type="button" class="copy-link-btn" id="copyLinkBtn">🔗 이 계산기 링크 복사하기</button>
+      </div>
+    </div>
+
+    <div class="cert-bottomline">
+      <span>만나이계산기</span>
+      <span>KR AGE STANDARD</span>
+    </div>
+  </div>
+
+  <!-- 본문 중간 광고 위치 -->
+  <div class="ad-slot-mid">
+    <div class="ad-box">광고 영역 (본문 중간) &mdash; AdSense 승인 후 이 자리에 게재됩니다</div>
+  </div>
+
+  <div class="explainer">
+    <h2>왜 나이가 세 가지인가요</h2>
+    <p><strong>만 나이</strong>는 태어난 날을 0세로 시작해 생일이 지날 때마다 한 살씩 늘어나는 국제 기준 나이입니다. 2023년 6월 28일부터 법령·계약·행정 문서에서 별도 규정이 없는 한 만 나이 사용이 원칙이 되었습니다.</p>
+    <p><strong>연 나이</strong>는 태어난 해를 기준으로 매년 1월 1일에 한 살씩 늘어나는 방식으로, 병역법·청소년보호법 등 일부 법령에서 여전히 사용됩니다.</p>
+    <p><strong>세는 나이</strong>는 태어나자마자 1세로 치고 해가 바뀔 때마다 한 살씩 늘어나는 전통적인 계산법으로, 현재는 공식 기준으로 쓰이지 않지만 일상 대화에서는 여전히 종종 쓰입니다.</p>
+    <p>띠는 태양력 기준 출생 연도로 간단히 계산한 값으로, 음력 설 이전에 태어난 경우 실제 띠와 하루이틀 차이가 날 수 있습니다.</p>
+  </div>
+
+  <footer>
+    이 계산기의 결과는 참고용이며, 법적·행정적 판단의 근거로는 관계 기관의 공식 확인을 이용하시기 바랍니다.
+  </footer>
+
+</div>
+
+<!-- 하단 배너 광고 위치 -->
+<div class="ad-slot">
+  <div class="ad-box">광고 영역 (하단 배너) &mdash; AdSense 승인 후 이 자리에 게재됩니다</div>
+</div>
+
+<script>
+(function () {
+  var birthInput = document.getElementById('birthInput');
+  var placeholderHint = document.getElementById('placeholderHint');
+  var resultEl = document.getElementById('result');
+  var todayLabel = document.getElementById('todayLabel');
+
+  var manAgeEl = document.getElementById('manAge');
+  var yearAgeEl = document.getElementById('yearAge');
+  var countAgeEl = document.getElementById('countAge');
+  var zodiacEl = document.getElementById('zodiac');
+  var zodiacEmojiEl = document.getElementById('zodiacEmoji');
+  var ddayEl = document.getElementById('dday');
+  var birthdayPassedEl = document.getElementById('birthdayPassed');
+  var copyLinkBtn = document.getElementById('copyLinkBtn');
+
+  var ZODIAC = ['쥐','소','호랑이','토끼','용','뱀','말','양','원숭이','닭','개','돼지'];
+  var ZODIAC_EMOJI = {
+    '쥐': '🐭', '소': '🐮', '호랑이': '🐯', '토끼': '🐰',
+    '용': '🐲', '뱀': '🐍', '말': '🐴', '양': '🐑',
+    '원숭이': '🐵', '닭': '🐔', '개': '🐶', '돼지': '🐷'
+  };
+
+  function formatToday(d) {
+    var y = d.getFullYear(), m = d.getMonth() + 1, day = d.getDate();
+    return y + '.' + String(m).padStart(2, '0') + '.' + String(day).padStart(2, '0');
+  }
+
+  function calcManAge(birth, today) {
+    var age = today.getFullYear() - birth.getFullYear();
+    var monthDiff = today.getMonth() - birth.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+      age -= 1;
+    }
+    return age;
+  }
+
+  function hasBirthdayPassed(birth, today) {
+    var monthDiff = today.getMonth() - birth.getMonth();
+    if (monthDiff > 0) return true;
+    if (monthDiff < 0) return false;
+    return today.getDate() >= birth.getDate();
+  }
+
+  function calcZodiac(year) {
+    var idx = ((year - 4) % 12 + 12) % 12;
+    return ZODIAC[idx];
+  }
+
+  function calcNextBirthday(birth, today) {
+    var next = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+    if (next < today) {
+      next = new Date(today.getFullYear() + 1, birth.getMonth(), birth.getDate());
+    }
+    var diffMs = next - stripTime(today);
+    var days = Math.round(diffMs / (1000 * 60 * 60 * 24));
+    return { date: next, days: days };
+  }
+
+  function stripTime(d) {
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+
+  function render() {
+    var val = birthInput.value;
+    if (!val) {
+      resultEl.classList.remove('show');
+      placeholderHint.style.display = 'block';
+      return;
+    }
+
+    var birth = new Date(val + 'T00:00:00');
+    var today = new Date();
+
+    if (isNaN(birth.getTime()) || birth > today) {
+      resultEl.classList.remove('show');
+      placeholderHint.style.display = 'block';
+      placeholderHint.textContent = '올바른 생년월일을 입력해 주세요';
+      return;
+    }
+
+    var manAge = calcManAge(birth, today);
+    var yearAge = today.getFullYear() - birth.getFullYear();
+    var countAge = yearAge + 1;
+    var zodiac = calcZodiac(birth.getFullYear());
+    var nb = calcNextBirthday(birth, today);
+    var passed = hasBirthdayPassed(birth, today);
+
+    manAgeEl.textContent = manAge;
+    yearAgeEl.textContent = yearAge;
+    countAgeEl.textContent = countAge;
+    zodiacEl.textContent = zodiac + '띠';
+    zodiacEmojiEl.textContent = ZODIAC_EMOJI[zodiac] || '';
+
+    if (nb.days === 0) {
+      ddayEl.textContent = '오늘이 생일입니다';
+    } else {
+      ddayEl.textContent = 'D-' + nb.days;
+    }
+
+    birthdayPassedEl.textContent = passed
+      ? '올해 생일이 지나 ' + manAge + '세입니다'
+      : '올해 생일이 지나면 ' + (manAge + 1) + '세가 됩니다';
+
+    placeholderHint.style.display = 'none';
+    resultEl.classList.add('show');
+  }
+
+  function copyLink() {
+    var url = window.location.href;
+
+    function fallbackCopy() {
+      var textarea = document.createElement('textarea');
+      textarea.value = url;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (e) {}
+      document.body.removeChild(textarea);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        alert('링크가 복사되었습니다!');
+      }).catch(function () {
+        fallbackCopy();
+        alert('링크가 복사되었습니다!');
+      });
+    } else {
+      fallbackCopy();
+      alert('링크가 복사되었습니다!');
+    }
+  }
+
+  todayLabel.textContent = formatToday(new Date());
+  birthInput.addEventListener('input', render);
+  birthInput.addEventListener('change', render);
+  copyLinkBtn.addEventListener('click', copyLink);
+})();
+</script>
+
+</body>
+</html>
