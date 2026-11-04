@@ -3,325 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>시니어 라이프 & 디지털 생활 편의 웹 포털 - 만 나이 계산기, 두뇌 트레이닝, 건강 백과</title>
-<meta name="description" content="법적 만 나이 계산기와 띠별 운세, 치매 예방을 위한 두뇌 회전 머지 퍼즐 게임, 그리고 중장년층을 위한 디지털 리터러시 및 뇌 건강 전문 칼럼을 제공하는 종합 웹 포털입니다.">
-<meta name="keywords" content="만 나이 계산기, 연 나이, 띠별 운세, 두뇌 게임, 치매 예방 퍼즐, 시니어 건강 상식, 디지털 리터러시, 생활 편의 도구">
+<meta name="naver-site-verification" content="2f3d4e3419c8b5c07b5c9be22a4787c8aa2cdbb8" />
+<meta name="google-site-verification" content="xYLR0tCSYhR7W60V0f1D67vMiuwXvfkYebZ_d0BHnAw" />
+<title>시니어 & 라이프 스마트 포털 | 만 나이 계산기·두뇌 게임·7080 생활 도구 모음</title>
+<meta name="description" content="법적 만 나이 계산기, 시니어 두뇌 회전 머지 퍼즐, 7080 추억의 상식 퀴즈, 트로트 감성 테스트, 아침 안부 인사말 카드 및 생애주기별 복지·건강 전문 칼럼을 제공하는 통합 라이프 포털입니다.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4970826371996884" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <style>
-  :root {
-    --primary: #1a56db;
-    --primary-dark: #1e429f;
-    --bg: #f3f4f6;
-    --card-bg: #ffffff;
-    --text-main: #111827;
-    --text-sub: #4b5563;
-    --border: #e5e7eb;
-  }
   * { box-sizing: border-box; }
   body {
     font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
-    line-height: 1.75;
-    color: var(--text-main);
-    background-color: var(--bg);
+    background-color: #f3f4f6;
+    color: #1f2937;
     margin: 0;
     padding: 0;
+    line-height: 1.8;
+  }
+  header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+    color: #ffffff;
+    padding: 42px 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    word-break: keep-all;
+  }
+  header p {
+    font-size: 17px;
+    color: #e0e7ff;
+    max-width: 680px;
+    margin: 0 auto;
+    word-break: keep-all;
   }
   .container {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 18px;
   }
-  /* 상단 네비게이션 */
-  nav {
-    background-color: var(--card-bg);
-    border-bottom: 1px solid var(--border);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .logo {
-    font-size: 20px;
+  .sec-title {
+    font-size: 23px;
     font-weight: 800;
-    color: var(--primary);
-    text-decoration: none;
-  }
-  .nav-links a {
-    color: var(--text-sub);
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .nav-links a:hover { color: var(--primary); }
-
-  /* 헤더 배너 */
-  header {
-    text-align: center;
-    padding: 45px 25px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
-    color: #ffffff;
-    border-radius: 14px;
-    margin: 20px 0 30px;
-    box-shadow: 0 4px 12px rgba(26, 86, 219, 0.15);
-  }
-  header h1 { margin: 0 0 12px; font-size: 28px; font-weight: 800; }
-  header p { margin: 0; font-size: 16px; opacity: 0.9; }
-
-  /* 서비스 카드 그리드 */
-  .section-title {
-    font-size: 22px;
-    font-weight: 800;
-    margin: 35px 0 15px;
+    color: #111827;
+    margin: 10px 0 18px;
     padding-left: 12px;
-    border-left: 5px solid var(--primary);
-    color: #1e293b;
+    border-left: 5px solid #1d4ed8;
   }
-  .service-grid {
+  .grid-services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-bottom: 45px;
   }
-  @media (max-width: 600px) {
-    .service-grid { grid-template-columns: 1fr; }
-  }
-  .card {
-    background: var(--card-bg);
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  .s-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.15s;
   }
-  .badge {
+  .s-card:hover {
+    transform: translateY(-4px);
+    border-color: #93c5fd;
+  }
+  .s-badge {
     display: inline-block;
-    background: #dbeafe;
-    color: var(--primary);
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 800;
     padding: 4px 10px;
     border-radius: 20px;
     margin-bottom: 10px;
     width: fit-content;
   }
-  .card h2 { font-size: 20px; color: #111827; margin: 0 0 12px; }
-  .card p { font-size: 15px; color: var(--text-sub); margin: 0 0 15px; }
-  .btn {
-    display: inline-block;
-    background: var(--primary);
-    color: #fff;
-    padding: 13px 22px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-    text-align: center;
-    transition: background 0.2s;
-  }
-  .btn:hover { background: var(--primary-dark); }
-
-  /* 심층 칼럼 및 가이드 영역 */
-  .article-box {
-    background: var(--card-bg);
-    padding: 32px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    margin-bottom: 24px;
-  }
-  .article-box h3 {
+  .s-card h3 {
     font-size: 20px;
+    margin: 0 0 10px;
+    color: #111827;
+  }
+  .s-card p {
+    font-size: 15px;
+    color: #4b5563;
+    margin: 0 0 18px;
+    word-break: keep-all;
+  }
+  .s-btn {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    background: #1d4ed8;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .article-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 26px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border: 1px solid #e5e7eb;
+  }
+  .article-card h2 {
+    font-size: 22px;
     color: #1e3a8a;
     margin-top: 0;
     padding-bottom: 12px;
-    border-bottom: 2px solid #f1f5f9;
+    border-bottom: 2px solid #f3f4f6;
   }
-  .article-box h4 {
-    font-size: 17px;
-    color: #1f2937;
-    margin: 22px 0 8px;
+  .article-card h3 {
+    font-size: 18px;
+    color: #111827;
+    margin-top: 24px;
   }
-  .article-box p {
+  .article-card p, .article-card li {
     font-size: 15.5px;
     color: #374151;
-    margin-bottom: 14px;
-    text-align: justify;
+    word-break: keep-all;
   }
-  .info-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 18px 0;
-    font-size: 14.5px;
-  }
-  .info-table th, .info-table td {
-    border: 1px solid var(--border);
-    padding: 12px;
-    text-align: left;
-  }
-  .info-table th { background-color: #f8fafc; font-weight: 700; color: #1e293b; }
-
-  /* FAQ 및 정책 영역 */
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-    padding: 15px 0;
-  }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q { font-weight: 700; color: #111827; margin-bottom: 6px; font-size: 16px; }
-  .faq-a { color: var(--text-sub); font-size: 15px; margin: 0; }
-
   footer {
-    background: #1f2937;
+    background: #111827;
     color: #9ca3af;
-    padding: 40px 20px;
+    padding: 35px 20px;
+    font-size: 14px;
     margin-top: 50px;
-    font-size: 13.5px;
   }
   .footer-inner {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
   }
-  .footer-inner h4 { color: #f3f4f6; margin-top: 0; }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">🌟 시니어 & 라이프 웹 포털</a>
-    <div class="nav-links">
-      <a href="#services">무료 웹 도구</a>
-      <a href="#columns">전문 칼럼</a>
-      <a href="#faq">자주 묻는 질문</a>
-      <a href="#policy">개인정보처리방침</a>
-    </div>
-  </div>
-</nav>
+<header>
+  <h1>🌟 시니어 & 라이프 스마트 웹 포털</h1>
+  <p>일상에 꼭 필요한 연령·복지 계산기부터 두뇌 건강 퍼즐, 7080 추억의 생활 도구와 전문가 칼럼까지 한곳에서 무료로 이용하세요.</p>
+</header>
 
 <div class="container">
-  <header>
-    <h1>디지털 생활 편의 도구 및 두뇌 건강 포털</h1>
-    <p>별도의 회원가입이나 앱 설치 없이 웹 브라우저에서 즉시 이용하는 스마트 라이프 서비스</p>
-  </header>
-
-  <h2 id="services" class="section-title">제공 중인 무료 웹 서비스</h2>
-  <div class="service-grid">
-    <div class="card">
+  <h2 class="sec-title">🚀 바로 실행하는 5대 스마트 생활 도구 & 두뇌 게임</h2>
+  <div class="grid-services">
+    <div class="s-card">
       <div>
-        <span class="badge">생활 법률 & 운세 도구</span>
-        <h2>1. 통합 만 나이 계산기 & 띠별 운세</h2>
-        <p>대한민국 민법 및 행정기본법에 따른 정확한 '만 나이'와 병역법·청소년보호법 기준인 '연 나이', 그리고 전통 '세는 나이'를 생년월일 입력 한 번으로 즉시 산출합니다. 12간지 기준의 동물 띠 분석과 다음 생일까지 남은 디데이(D-Day), 오늘의 활력 운세 가이드를 함께 확인하실 수 있습니다.</p>
+        <span class="s-badge" style="background:#dbeafe; color:#1e40af;">법률·행정 필수 도구</span>
+        <h3>🎂 통합 만 나이·띠 계산기</h3>
+        <p>생년월일 입력 한 번으로 법적 만 나이, 연 나이, 세는 나이, 12간지 띠 정보와 다음 생일 D-Day 및 연령별 시니어 복지 기준을 즉시 확인합니다.</p>
       </div>
-      <a href="/age-calculator/" class="btn">👉 나이 계산기 & 운세 시작하기</a>
+      <a class="s-btn" href="https://jongyhak.github.io/age-calculator/">나이 계산기 바로가기 👉</a>
     </div>
 
-    <div class="card">
+    <div class="s-card">
       <div>
-        <span class="badge">두뇌 트레이닝 & 치매 예방</span>
-        <h2>2. 공간 지각력 향상 도형 머지 퍼즐</h2>
-        <p>물리 엔진을 기반으로 같은 모양의 도형을 결합하여 상위 단계의 도형으로 진화시키는 두뇌 회전 퍼즐 게임입니다. 낙하 위치 예측과 연쇄 결합 전략을 세우는 과정에서 전두엽과 두정엽을 자극하여 중장년층의 인지 기능 유지 및 일상 스트레스 해소에 도움을 줍니다.</p>
+        <span class="s-badge" style="background:#fef3c7; color:#92400e;">카톡 안부·소통 도구</span>
+        <h3>🌅 오늘의 아침 인사말 & 명언 카드</h3>
+        <p>요일별·계절별 따뜻한 아침 안부 편지와 건강 명언을 버튼 한 번으로 복사하여 카카오톡 단톡방과 지인들에게 바로 전송할 수 있습니다.</p>
       </div>
-      <a href="/merge-game/" class="btn">🎮 도형 머지 게임 시작하기</a>
+      <a class="s-btn" style="background:#d97706;" href="https://jongyhak.github.io/morning-card/">인사말 카드 보내기 👉</a>
+    </div>
+
+    <div class="s-card">
+      <div>
+        <span class="s-badge" style="background:#ffe4e6; color:#be123c;">음악 치료·힐링 테스트</span>
+        <h3>🎤 나의 트로트 감성 & 명곡 찾기</h3>
+        <p>5가지 간단한 음악 취향 질문으로 알아보는 나의 트로트 성향 분석! 내 마음에 찰떡궁합인 힐링 명곡 추천과 음악 뇌과학 정보를 확인하세요.</p>
+      </div>
+      <a class="s-btn" style="background:#e11d48;" href="https://jongyhak.github.io/trot-test/">트로트 테스트 시작 👉</a>
+    </div>
+
+    <div class="s-card">
+      <div>
+        <span class="s-badge" style="background:#dcfce7; color:#15803d;">회상 요법·기억력 퀴즈</span>
+        <h3>🏫 7080 그때 그 시절 추억 퀴즈</h3>
+        <p>양은 도시락, 공중전화 토큰 등 정겨운 1970~80년대 생활 상식을 맞히며 뇌 해마를 자극하고 나의 기억력 나이를 점검하는 두뇌 활력 퀴즈입니다.</p>
+      </div>
+      <a class="s-btn" style="background:#16a34a;" href="https://jongyhak.github.io/memory-quiz/">추억의 퀴즈 풀기 👉</a>
+    </div>
+
+    <div class="s-card">
+      <div>
+        <span class="s-badge" style="background:#f3e8ff; color:#6b21a8;">공간지각·두뇌 트레이닝</span>
+        <h3>🎮 도형 머지(Merge) 물리 퍼즐</h3>
+        <p>같은 모양의 도형을 떨어뜨려 더 큰 도형으로 합쳐 나가는 두뇌 회전 퍼즐 게임입니다. 전두엽과 두정엽을 자극하는 일일 두뇌 운동을 즐겨보세요.</p>
+      </div>
+      <a class="s-btn" style="background:#7c3aed;" href="https://jongyhak.github.io/merge-game/">두뇌 퍼즐 게임 시작 👉</a>
     </div>
   </div>
 
-  <h2 id="columns" class="section-title">심층 가이드 및 전문 칼럼</h2>
+  <h2 class="sec-title">📚 시니어 건강·복지·디지털 라이프 심층 가이드 칼럼</h2>
 
-  <!-- 칼럼 1 -->
-  <article class="article-box">
-    <h3>📘 [법령 해설] '만 나이 통일법' 완벽 가이드 및 예외 적용 사례 총정리</h3>
-    <p>대한민국은 오랫동안 태어나자마자 1살로 시작해 매년 1월 1일마다 한 살씩 더하는 고유한 나이 계산법(세는 나이)을 관습적으로 사용해 왔습니다. 그러나 이러한 방식은 국제적인 표준과 동떨어져 있을 뿐만 아니라, 각종 사회복지 수당 지급, 정년퇴직 시점 산정, 보험 계약 및 의료 현장에서 불필요한 법적 분쟁과 행정적 혼선을 초래했습니다. 이를 해결하기 위해 2023년 6월 28일부터 행정기본법 및 민법 개정안, 이른바 '만 나이 통일법'이 전면 시행되었습니다.</p>
-    
-    <h4>1. 세 가지 나이 계산 방식의 명확한 차이점</h4>
-    <p>법적·사회적 상황에 따라 사용되는 나이의 정의는 아래와 같이 명확히 구분됩니다. 본 포털의 나이 계산기는 아래 세 가지 기준을 동시에 산출하여 사용자의 혼란을 방지합니다.</p>
-    
-    <table class="info-table">
-      <thead>
-        <tr>
-          <th>구분</th>
-          <th>산출 기준 및 계산 공식</th>
-          <th>주요 활용 분야</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>만 나이 (표준)</strong></td>
-          <td>출생 직후 0세로 시작하며, 생일이 지날 때마다 1세씩 증가. (올해 생일 경과 시: 현재 연도 - 출생 연도 / 생일 미경과 시: 현재 연도 - 출생 연도 - 1)</td>
-          <td>공문서, 민법상 계약, 국민연금 수령, 기초연금 신청, 노인 복지 혜택, 의약품 복용 기준</td>
-        </tr>
-        <tr>
-          <td><strong>연 나이</strong></td>
-          <td>생일 경과 여부와 무관하게 연도만 단순 차감. (현재 연도 - 출생 연도)</td>
-          <td>병역법(징병검사), 청소년보호법(주류·담배 구매 제한), 초·중등교육법(취학 연령)</td>
-        </tr>
-        <tr>
-          <td><strong>세는 나이 (한국식)</strong></td>
-          <td>출생 시 1세로 시작하며, 매년 1월 1일에 전 국민이 동일하게 1세 증가. (현재 연도 - 출생 연도 + 1)</td>
-          <td>일상적인 사교 모임, 전통 명절 덕담 등 비공식적 관습 영역</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4>2. 중장년층이 꼭 알아야 할 만 나이 기준 핵심 혜택</h4>
-    <p>시니어 세대에게 만 나이 계산은 경제적 혜택과 직결됩니다. 대표적으로 <strong>기초연금 신청 자격(만 65세 이상)</strong>은 주민등록상 생일이 속한 달의 1개월 전부터 신청이 가능하며, 지하철 무임승차 및 KTX 경로 우대 할인, 국가 무료 예방접종(독감 및 폐렴구균) 역시 철저하게 출생일 기준의 '만 65세'가 도래해야 혜택이 부여됩니다. 따라서 본인의 정확한 만 나이 도달 시점을 미리 파악해 두는 것이 현명한 노후 설계의 첫걸음입니다.</p>
+  <article class="article-card">
+    <h2>제1장. 대한민국 만 나이 통일법 시행에 따른 생애주기별 연금·복지 수급 완벽 가이드</h2>
+    <p>대한민국 민법 및 행정기본법 개정을 통해 일상과 행정 전반에서 나이를 계산하는 기준이 출생일 기준의 '만 나이'로 완전히 일원화되었습니다. 과거 관습적으로 사용하던 '세는 나이(한국식 나이)'와 법적 나이의 혼용으로 인해 발생하던 사회복지 수당 신청 누락 및 보험 계약 분쟁을 예방하기 위해서는 본인의 정확한 만 나이 도래 시점을 파악하는 것이 무엇보다 중요합니다.</p>
+    <h3>1. 주요 연령대별 국가 복지 및 연금 체크리스트</h3>
+    <ul>
+      <li><strong>만 60세 도래 시점:</strong> 국민연금 의무 가입 기간이 종료되며, 가입 기간이 10년 미만인 경우 임의계속가입 제도를 활용해 수급 자격을 채울 수 있습니다. 또한 주택금융공사의 주택연금 신청 자격(부부 중 1명 만 55세 이상) 및 지자체 시니어 일자리 지원 사업을 적극적으로 점검해야 하는 시기입니다.</li>
+      <li><strong>만 65세 도래 시점:</strong> 생일이 속한 달의 1개월 전부터 주민센터나 복지로 웹사이트를 통해 <strong>기초연금</strong>을 신청할 수 있습니다. 아울러 전국 도시철도(지하철) 무임승차 혜택, KTX 및 새마을호 평일 30% 할인, 국가 무료 독감 및 폐렴구균 예방접종, 임플란트·틀니 건강보험 본인부담금 경감(30%) 등 핵심적인 경로 우대 복지가 일제히 개시됩니다.</li>
+    </ul>
+    <h3>2. 예외적으로 '연 나이(현재 연도 - 출생 연도)'가 적용되는 법령</h3>
+    <p>원칙적으로 모든 행정 기준은 만 나이로 통일되었으나, 국민 편익과 행정 관리의 효율성을 위해 초·중등교육법상 취학 연령, 청소년보호법상 구매 제한 기준, 병역법상 병역 의무 부과, 그리고 공무원 임용 시험 및 일부 국가 건강검진 대상자 산정 시에는 생일 도래 여부와 무관하게 해당 연도 전체를 하나의 집단으로 묶는 '연 나이'가 예외적으로 적용됩니다.</p>
   </article>
 
-  <!-- 칼럼 2 -->
-  <article class="article-box">
-    <h3>🧠 [뇌과학 칼럼] 디지털 퍼즐 게임이 중장년층의 인지 능력과 치매 예방에 미치는 긍정적 영향</h3>
-    <p>인간의 뇌는 근육과 같아서 지속적으로 새로운 자극을 주지 않으면 신경세포(뉴런) 간의 시냅스 연결이 약화되며 노화가 가속화됩니다. 특히 스마트폰을 통해 수동적으로 짧은 영상(숏폼)만을 시청하는 습관은 뇌의 전두엽 활동을 저하시켜 기억력 감퇴와 주의력 결핍을 유발하는 이른바 '디지털 치매'의 원인이 됩니다.</p>
-
-    <h4>1. 공간 지각 능력과 작업 기억(Working Memory)의 활성화</h4>
-    <p>본 사이트에서 제공하는 '도형 머지 퍼즐'과 같은 캐주얼 물리 퍼즐 게임은 수동적 영상 시청과 정반대의 뇌 영역을 자극합니다. 화면 상단에서 떨어지는 도형의 크기와 무게중심을 파악하고, 기존에 쌓여 있는 도형들과 부딪혔을 때 어떻게 굴러갈지 예측하는 과정은 뇌의 <strong>두정엽(공간 지각 담당)</strong>과 <strong>전두엽(판단 및 계획 담당)</strong>을 동시에 활성화합니다. 다음에 등장할 도형을 미리 확인하고 2~3수 앞을 내다보며 배치를 결정하는 행위는 단기 작업 기억력을 훈련하는 훌륭한 두뇌 운동이 됩니다.</p>
-
-    <h4>2. 건강한 디지털 여가 생활을 위한 실천 수칙</h4>
-    <p>두뇌 건강을 위한 게임이라도 올바른 자세와 시간 관리가 동반되어야 합니다. 첫째, 하루 20~30분 내외로 규칙적인 시간을 정해 가볍게 즐기는 것이 집중력 향상에 가장 효과적입니다. 둘째, 스마트폰 화면을 볼 때는 고개를 과도하게 숙이지 말고 눈높이에 맞추어 경추(목뼈)의 부담을 줄여야 합니다. 셋째, 게임 후에는 먼 곳을 바라보며 눈의 피로를 풀어주고 가벼운 스트레칭을 병행하는 것이 좋습니다.</p>
+  <article class="article-card">
+    <h2>제2장. 백세 시대 인지 건강을 지키는 뇌신경 과학과 디지털 두뇌 트레이닝 원리</h2>
+    <p>인간의 뇌는 성인이 된 이후에도 새로운 자극과 학습을 통해 신경세포 간 연결망(시냅스)을 재구성하는 <strong>신경가소성(Neuroplasticity)</strong>을 평생 유지합니다. 노년의학 전문가들은 신체 근육을 유지하기 위해 매일 걷기 운동을 하듯, 인지 예비능(Cognitive Reserve)을 보존하기 위해서는 매일 규칙적인 두뇌 자극 활동이 필수적이라고 강조합니다.</p>
+    <h3>1. 전두엽과 해마를 깨우는 3대 인지 활동</h3>
+    <p>첫째, 본 포털의 <strong>도형 머지 퍼즐</strong>과 같은 공간 지각 게임을 플레이하면 도형의 낙하 위치와 결합 순서를 계산하는 과정에서 뇌의 사령탑인 전두엽의 혈류량이 크게 증가합니다. 둘째, <strong>7080 추억의 상식 퀴즈</strong>를 통해 과거의 장기 기억을 인출하는 회상 요법은 기억 중추인 해마를 직접 자극하여 언어 유창성과 단기 작업 기억력을 보호합니다. 셋째, <strong>트로트 음악 감상과 아침 안부 인사 나누기</strong>는 정서적 고립감을 해소하고 옥시토신과 도파민 분비를 촉진하여 노년기 우울증 예방에 결정적인 역할을 합니다.</p>
   </article>
 
-  <!-- 칼럼 3 -->
-  <article class="article-box">
-    <h3>📱 [디지털 리터러시] 7080 시니어 세대를 위한 무설치 웹(Web) 서비스 활용법과 보안 수칙</h3>
-    <p>스마트폰 활용 능력이 일상의 편리함을 좌우하는 시대가 되었지만, 수많은 애플리케이션(앱)을 검색하여 설치하고, 복잡한 회원가입과 본인인증을 거치는 과정은 중장년층에게 큰 피로감을 줍니다. 더욱이 출처가 불분명한 앱을 무분별하게 설치할 경우 스마트폰 용량이 부족해져 기기가 느려지거나, 악성 광고 및 스미싱(Smishing) 범죄에 노출될 위험도 존재합니다.</p>
-    <p>이러한 문제를 근본적으로 해결하는 대안이 바로 본 포털이 지향하는 <strong>'무설치 웹 애플리케이션(Web Application)'</strong>입니다. 인터넷 브라우저(크롬, 사파리, 삼성 인터넷, 카카오톡 내장 브라우저 등)에서 주소만 클릭하면 즉시 기능이 작동하며, 스마트폰에 어떠한 프로그램도 강제로 설치하지 않아 기기 성능 저하나 개인정보 유출 우려가 전혀 없습니다. 자주 사용하는 기능은 브라우저의 '홈 화면에 추가' 기능을 활용하면 일반 앱처럼 바탕화면에 아이콘을 만들어 두고 언제든 안전하고 편리하게 접속할 수 있습니다.</p>
+  <article class="article-card">
+    <h2>제3장. 시니어를 위한 안전한 스마트폰 활용 및 금융 스미싱(Smishing) 예방 수칙</h2>
+    <p>디지털 기기 사용이 일상화됨에 따라 중장년층을 노리는 지능적인 모바일 금융 사기(메신저 피싱, 스미싱) 또한 증가하고 있습니다. 건강하고 안전한 디지털 라이프를 누리기 위해 아래의 3대 보안 원칙을 반드시 실천하시기 바랍니다.</p>
+    <ul>
+      <li><strong>출처 불명의 인터넷 주소(URL) 및 앱 설치 파일(.apk) 절대 클릭 금지:</strong> 청첩장, 부고장, 택배 반송 안내, 정부 지원금 신청 등을 사칭한 문자 메시지 내 링크를 누를 경우 악성 원격제어 앱이 설치될 수 있습니다. 본 포털의 모든 서비스는 별도의 앱 설치나 회원가입, 개인정보 입력을 일절 요구하지 않는 100% 안전한 웹 표준 페이지로 운영됩니다.</li>
+      <li><strong>가족 및 지인 사칭 송금 요구 시 반드시 직접 전화 통화로 확인:</strong> "핸드폰 액정이 깨져서 그러니 상품권 핀번호나 급전을 보내달라"는 카카오톡 메시지를 받으면 메신저로만 대화하지 말고 반드시 기존에 저장된 전화번호로 직접 음성 통화를 걸어 본인 여부를 확인해야 합니다.</li>
+      <li><strong>여신거래 안심차단 및 지연이체 서비스 적극 활용:</strong> 주거래 은행 창구나 모바일 뱅킹을 통해 비대면 대출을 사전에 차단하는 '여신거래 안심차단 서비스'에 가입해 두면 명의도용으로 인한 금전적 피해를 원천적으로 막을 수 있습니다.</li>
+    </ul>
   </article>
-
-  <!-- 자주 묻는 질문 -->
-  <div id="faq" class="article-box">
-    <h3>❓ 자주 묻는 질문 (FAQ) 및 이용 안내</h3>
-    <div class="faq-item">
-      <div class="faq-q">Q1. 나이 계산기에 입력한 제 생년월일 정보가 서버에 저장되나요?</div>
-      <p class="faq-a">A. 전혀 저장되지 않습니다. 본 사이트의 모든 계산 및 게임 로직은 사용자의 스마트폰이나 PC 브라우저 내부(클라이언트 사이드 자바스크립트)에서만 즉시 처리되며, 외부 서버로 어떠한 개인정보도 전송하거나 기록하지 않으므로 100% 안심하고 이용하실 수 있습니다.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q2. 서비스 이용 요금이나 유료 결제 항목이 있나요?</div>
-      <p class="faq-a">A. 본 포털에서 제공하는 나이 계산기, 운세 보기, 도형 머지 퍼즐 게임 및 향후 업데이트될 시니어 맞춤형 테스트 등 모든 콘텐츠는 평생 100% 무료로 제공됩니다.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Q3. 앞으로 어떤 서비스가 추가로 업데이트되나요?</div>
-      <p class="faq-a">A. 중장년층의 활기찬 일상을 돕기 위해 카카오톡으로 지인에게 보낼 수 있는 '아침 인사말 & 건강 명언 카드 생성기', 취향을 분석하는 '나와 찰떡궁합인 트로트 가수 테스트', 그리고 추억을 되살리는 '7080 그때 그 시절 단어 퀴즈'가 순차적으로 오픈될 예정입니다.</p>
-    </div>
-  </div>
 </div>
 
-<!-- 푸터 및 개인정보처리방침 (애드센스 심사 핵심 요소) -->
-<footer id="policy">
+<footer>
   <div class="footer-inner">
-    <h4>🔒 개인정보처리방침 및 서비스 이용약관 (Privacy Policy)</h4>
-    <p>1. <strong>개인정보의 수집 및 이용 목적:</strong> 본 사이트(jongyhak.github.io)는 별도의 회원가입 절차 없이 누구나 자유롭게 이용할 수 있는 공개 웹 포털이며, 사용자의 이름, 주민등록번호, 전화번호 등 개인을 식별할 수 있는 어떠한 정보도 직접 수집하거나 서버에 저장하지 않습니다.</p>
-    <p>2. <strong>쿠키(Cookie) 및 제3자 광고 서비스 안내:</strong> 본 사이트는 무료 서비스 운영 및 유지를 위해 구글 애드센스(Google AdSense) 등 제3자 광고 서비스를 게재할 수 있습니다. 구글을 포함한 제3자 광고 사업자는 사용자의 웹사이트 방문 기록을 바탕으로 맞춤형 광고를 제공하기 위해 브라우저 쿠키(Cookie)를 사용할 수 있습니다. 사용자는 언제든지 웹 브라우저의 설정 메뉴에서 쿠키 저장을 거부하거나 Google 광고 설정 페이지(https://adssettings.google.com)를 통해 맞춤형 광고 수신을 해제할 수 있습니다.</p>
-    <p>3. <strong>면책 공고:</strong> 본 사이트에서 제공하는 계산 결과, 운세 정보 및 건강 관련 칼럼은 일상적인 편의를 돕기 위한 참고 자료이며, 의학적 진단이나 법적 효력을 대신할 수 없습니다.</p>
-    <hr style="border: 0; border-top: 1px solid #374151; margin: 20px 0;">
-    <p>© 2026 시니어 & 라이프 디지털 웹 포털 (jongyhak.github.io). All rights reserved.</p>
+    <p><strong>[개인정보처리방침 및 이용약관 안내]</strong></p>
+    <p>본 웹사이트(jongyhak.github.io 및 하위 서비스 페이지)는 이용자의 어떠한 개인정보(이름, 주민등록번호, 연락처 등)도 서버에 수집하거나 저장하지 않으며, 모든 계산과 퀴즈·게임 로직은 이용자의 웹 브라우저 내에서만 안전하게 처리됩니다. 본 사이트는 무료 콘텐츠 운영을 위해 Google AdSense 광고 프로그램을 사용하며, 구글을 포함한 제3자 광고 사업자는 이용자의 브라우저 쿠키(Cookie)를 사용해 이전 방문 기록을 바탕으로 맞춤형 광고를 게재할 수 있습니다. 이용자는 언제든지 브라우저 설정 또는 Google 광고 설정 페이지에서 맞춤형 광고 쿠키 사용을 거부할 수 있습니다.</p>
+    <p style="margin-top: 15px; color: #6b7280;">© 2026 Senior & Life Smart Portal (jongyhak.github.io). All rights reserved.</p>
   </div>
 </footer>
 
